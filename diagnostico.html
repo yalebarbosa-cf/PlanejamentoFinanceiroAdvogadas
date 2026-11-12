@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diagnóstico financeiro | Yale Barbosa</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,500;1,500&display=swap">
+<style>
+  :root{--paper:#F6F1E9;--card:#FBF8F3;--ink:#1E222B;--soft:#5A5F6A;--night:#1b1f27;--gold:#9A7646;--coin:#E2B65C;--line:#DDD4C6}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6}
+  .wrap{max-width:640px;margin:0 auto;padding:40px 20px 64px}
+  .back{color:var(--soft);text-decoration:none;font-size:14px}
+  .eyebrow{margin-top:28px;font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--gold)}
+  h1{font-family:'Lora',serif;font-weight:500;font-size:clamp(32px,6vw,44px);line-height:1.1;margin:12px 0 0}
+  h1 em{color:var(--gold)}
+  .lede{color:var(--soft);margin-top:14px}
+  form{margin-top:32px;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:28px;display:grid;gap:24px}
+  label.q,legend{font-weight:600;font-size:15px;margin-bottom:8px;display:block;padding:0}
+  input[type=text],input[type=email],input[type=tel]{width:100%;padding:14px 16px;border:1px solid var(--line);border-radius:12px;font:inherit;background:#fff;color:var(--ink)}
+  input:focus{outline:3px solid var(--coin);outline-offset:1px}
+  fieldset{border:0;margin:0;padding:0}
+  .opts{display:grid;gap:8px}
+  .opt{display:flex;align-items:center;gap:12px;padding:12px 16px;border:1px solid var(--line);border-radius:12px;background:#fff;cursor:pointer}
+  .opt:has(input:checked){border-color:var(--gold);background:#FBF3E4}
+  .opt input{accent-color:var(--night);width:18px;height:18px}
+  button{background:var(--night);color:#F4EFE6;border:0;border-radius:999px;padding:17px 28px;font:600 16px 'Inter',sans-serif;cursor:pointer}
+  button:hover{background:var(--coin);color:var(--night)}
+  button:disabled{opacity:.6;cursor:wait}
+  .msg{display:none;padding:14px 16px;border-radius:12px;font-size:15px}
+  .msg.err{display:block;background:#FBE9E7;color:#8A2B1F}
+  .ok{display:none;margin-top:32px;background:var(--night);color:#F4EFE6;border-radius:24px;padding:36px 28px}
+  .ok h2{font-family:'Lora',serif;font-weight:500;font-size:28px;margin:0}
+  .ok h2 em{color:var(--coin)}
+  .ok p{color:#B9BCC4;margin-top:12px}
+  .hp{position:absolute;left:-9999px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">← Voltar</a>
+  <div class="eyebrow">Diagnóstico gratuito</div>
+  <h1>Vamos entender o seu <em>momento financeiro</em></h1>
+  <p class="lede">Leva menos de um minuto. Depois, eu entro em contato pelo WhatsApp para marcarmos uma conversa.</p>
+
+  <form id="f" novalidate>
+    <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off">
+    <div><label class="q" for="nome">Nome</label><input type="text" id="nome" name="nome" autocomplete="name" required></div>
+    <div><label class="q" for="telefone">WhatsApp</label><input type="tel" id="telefone" name="telefone" placeholder="(81) 99999-9999" autocomplete="tel" required></div>
+    <div><label class="q" for="email">E-mail</label><input type="email" id="email" name="email" autocomplete="email" required></div>
+
+    <fieldset><legend>Qual é o seu momento financeiro hoje?</legend><div class="opts">
+      <label class="opt"><input type="radio" name="momento" value="Organizar as contas" required>Organizar as contas</label>
+      <label class="opt"><input type="radio" name="momento" value="Começar a investir">Começar a investir</label>
+      <label class="opt"><input type="radio" name="momento" value="Fazer o patrimônio crescer">Fazer o patrimônio crescer</label>
+    </div></fieldset>
+
+    <fieldset><legend>Qual é a sua faixa de renda mensal?</legend><div class="opts">
+      <label class="opt"><input type="radio" name="renda" value="Até R$ 5 mil" required>Até R$ 5 mil</label>
+      <label class="opt"><input type="radio" name="renda" value="De R$ 5 mil a R$ 10 mil">De R$ 5 mil a R$ 10 mil</label>
+      <label class="opt"><input type="radio" name="renda" value="De R$ 10 mil a R$ 15 mil">De R$ 10 mil a R$ 15 mil</label>
+      <label class="opt"><input type="radio" name="renda" value="De R$ 15 mil a R$ 20 mil">De R$ 15 mil a R$ 20 mil</label>
+      <label class="opt"><input type="radio" name="renda" value="Acima de R$ 20 mil">Acima de R$ 20 mil</label>
+    </div></fieldset>
+
+    <fieldset><legend>Quando você gostaria de começar?</legend><div class="opts">
+      <label class="opt"><input type="radio" name="inicio" value="O quanto antes" required>O quanto antes</label>
+      <label class="opt"><input type="radio" name="inicio" value="Nas próximas semanas">Nas próximas semanas</label>
+      <label class="opt"><input type="radio" name="inicio" value="No próximo mês">No próximo mês</label>
+      <label class="opt"><input type="radio" name="inicio" value="Só estou explorando">Só estou explorando</label>
+    </div></fieldset>
+
+    <div class="msg" id="msg" role="alert"></div>
+    <button type="submit" id="btn">Enviar diagnóstico</button>
+  </form>
+
+  <div class="ok" id="ok">
+    <h2>Recebido, <em>obrigada!</em></h2>
+    <p>Vou analisar suas respostas e entro em contato pelo WhatsApp em breve para marcarmos sua conversa.</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var URL_CRM = 'https://zayaesxkyrecyswbbzsw.supabase.co/functions/v1/receber-lead-externo/50da7bf2bc46ebfce457fadf6dacb6d90feae150519537c5';
+  var f = document.getElementById('f'), btn = document.getElementById('btn'), msg = document.getElementById('msg');
+
+  function erro(t){ msg.textContent = t; msg.className = 'msg err'; }
+
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    msg.className = 'msg';
+    if (f.website.value) return;
+    var d = new FormData(f);
+    var tel = (d.get('telefone') || '').replace(/\D/g, '');
+    if (!d.get('nome').trim()) return erro('Preencha seu nome.');
+    if (tel.length < 10) return erro('Informe um WhatsApp válido, com DDD.');
+    if (!/^\S+@\S+\.\S+$/.test(d.get('email'))) return erro('Informe um e-mail válido.');
+    if (!d.get('momento') || !d.get('renda') || !d.get('inicio')) return erro('Responda todas as perguntas.');
+
+    var dados = {
+      nome: d.get('nome').trim(),
+      telefone: tel,
+      email: d.get('email').trim(),
+      momento_financeiro: d.get('momento'),
+      faixa_renda: d.get('renda'),
+      quando_comecar: d.get('inicio'),
+      origem: 'Página Advogadas'
+    };
+
+    btn.disabled = true; btn.textContent = 'Enviando...';
+
+    function sucesso(){ f.style.display = 'none'; document.getElementById('ok').style.display = 'block'; window.scrollTo(0, 0); }
+
+    fetch(URL_CRM, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(dados) })
+      .then(function(r){ if (!r.ok) throw new Error(); sucesso(); })
+      .catch(function(){
+        fetch(URL_CRM, { method: 'POST', mode: 'no-cors', body: new URLSearchParams(dados) })
+          .then(sucesso)
+          .catch(function(){ btn.disabled = false; btn.textContent = 'Enviar diagnóstico'; erro('Não foi possível enviar agora. Tente novamente em instantes.'); });
+      });
+  });
+})();
+</script>
+</body>
+</html>
